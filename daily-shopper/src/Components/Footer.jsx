@@ -33,7 +33,7 @@ export const Footer = ()=>{
         </Box>
         
         </Center>
-        <Image src="https://i.imgur.com/L5xKABJ.png"/>
+        <Image src=""/>
       </Box>
         </>
     )
