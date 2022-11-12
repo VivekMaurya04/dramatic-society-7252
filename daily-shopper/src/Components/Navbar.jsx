@@ -4,17 +4,30 @@ import {
   Flex, Spacer, ButtonGroup, Button, Menu,
   MenuButton,
   MenuList,
-  MenuItem, Box
+  MenuItem, Text, Box
 } from '@chakra-ui/react'
 import { SearchIcon } from '@chakra-ui/icons'
-
+import { Link } from "react-router-dom";
+import data from "../db.json";
+import { useContext } from "react";
+import { AppContext } from "../AuthContext/AuthcontextProvider";
+import { getProductRequest } from "../AuthContext/ActionCreator";
 
 function Navbar() {
+  const { state, dispatch } = useContext(AppContext);
+
+  const handleclick = (da) => {
+    da === "hair"
+      ? dispatch(getProductRequest(data.hair))
+      : dispatch(getProductRequest(data.makeup));
+  };
+
   return (
     <div>
-      <Box bg='black' w='100%' p={4} color='white' justifyContent='center' >
-      Up to Rs.500 Off on Prepaid Purchases - Use Coupon <span style={{color: 'orange'}} >"PREPAID"</span>
-</Box>
+
+      <Flex bg='black' w='100%' p={4} color='white' justifyContent='center' >
+        Up to Rs.500 Off on Prepaid Purchases - Use Coupon <span style={{ color: 'orange' }} >"PREPAID"</span>
+      </Flex>
       <Flex minWidth='max-content' alignItems='center' gap='2'>
 
         <Image src='https://i.postimg.cc/8PRPLB7m/daily-shopper.png' alt='logo' w='10%' h='auto' />
@@ -42,22 +55,48 @@ function Navbar() {
             Categories
           </MenuButton>
           <HStack >
-          <MenuList>
-            <MenuItem>New File</MenuItem>
-            <MenuItem>New Window</MenuItem>
-            <MenuItem>Open...</MenuItem>
-            <MenuItem>Save File</MenuItem>
-          </MenuList>
+            <MenuList>
+              <MenuItem>New File</MenuItem>
+              <MenuItem>New Window</MenuItem>
+              <MenuItem>Open...</MenuItem>
+              <MenuItem>Save File</MenuItem>
+            </MenuList>
           </HStack>
         </Menu>
-        <p w='40px' h='40px' bg='tomato'>
+        {/* <Text>
           FlashSale
-        </p>
-        <p w='40px' h='40px' bg='pink.100'>
+        </Text> */}
+        <Box>
+          <Link to="/products">
+            {" "}
+            <Text
+              // fontSize="lg"
+
+              onClick={() => handleclick("makeup")}
+            >
+              {" "}
+              FlashSale
+            </Text>
+          </Link>
+        </Box>
+        <Box>
+          <Link to="/products">
+            {" "}
+            <Text
+              onClick={() => handleclick("hair")}
+              // fontSize="lg"
+             
+            >
+              {" "}
+              Best Deal
+            </Text>
+          </Link>
+        </Box>
+        {/* <Text >
           Best Deal
-        </p>
-        <p>Shop by Brand</p>
-        <p>Trending</p>
+        </Text> */}
+        <Text>Shop by Brand</Text>
+        <Text>Trending</Text>
         <p justifyContent='center'>New Arrivals</p>
       </HStack>
     </div>
