@@ -30,7 +30,7 @@ function Navbar() {
       </Flex>
       <Flex minWidth='max-content' alignItems='center' gap='2'>
 
-        <Image  src='https://i.postimg.cc/8PRPLB7m/daily-shopper.png' alt='logo' w='10%' h='auto' />
+        <Image src='https://i.postimg.cc/8PRPLB7m/daily-shopper.png' alt='logo' w='10%' h='auto' />
         <InputGroup>
           <InputLeftElement
             pointerEvents='none'
@@ -87,8 +87,8 @@ function Navbar() {
             {" "}
             <Text
               onClick={() => handleclick("hair")}
-              // fontSize="lg"
-             
+            // fontSize="lg"
+
             >
               {" "}
               Best Deal
