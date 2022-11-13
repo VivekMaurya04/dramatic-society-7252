@@ -30,7 +30,7 @@ function Navbar() {
       </Flex>
       <Flex minWidth='max-content' alignItems='center' gap='2'>
 
-        <Image src='https://i.postimg.cc/8PRPLB7m/daily-shopper.png' alt='logo' w='10%' h='auto' />
+        <Image  src='https://i.postimg.cc/8PRPLB7m/daily-shopper.png' alt='logo' w='10%' h='auto' />
         <InputGroup>
           <InputLeftElement
             pointerEvents='none'
@@ -56,10 +56,13 @@ function Navbar() {
           </MenuButton>
           <HStack >
             <MenuList>
-              <MenuItem>New File</MenuItem>
-              <MenuItem>New Window</MenuItem>
-              <MenuItem>Open...</MenuItem>
-              <MenuItem>Save File</MenuItem>
+              <MenuItem>MEN</MenuItem>
+              <MenuItem>WOMEN</MenuItem>
+              <MenuItem>ELECTRONICS</MenuItem>
+              <MenuItem>ESSENTIALS</MenuItem>
+              <MenuItem>FLASH SALE</MenuItem>
+              <MenuItem>HPME AND LIVING</MenuItem>
+              <MenuItem>KIDS AND MOM</MenuItem>
             </MenuList>
           </HStack>
         </Menu>
